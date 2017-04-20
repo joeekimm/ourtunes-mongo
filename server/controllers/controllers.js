@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Song = require('../models/songModel.js').Song
 
-const controller = {
+const songControl = {
   get: (req, res) => {
     Song.find({}, (err, result) => {
       if(err) {
@@ -34,5 +34,5 @@ const controller = {
 }
 
 module.exports = {
-  controller: controller
+  songControl: songControl
 }

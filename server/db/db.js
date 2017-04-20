@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const uri = 'mongodb://user:user@ds163340.mlab.com:63340/mytunes'
+const autoIncrement = require('mongoose-auto-increment');
+const uri = 'mongodb://user:user@ds163340.mlab.com:63340/mytunes';
 
-// autoIncrement.intialize(db)
 
 mongoose.connect(uri, (err) => {
   if(err) {
@@ -11,5 +11,9 @@ mongoose.connect(uri, (err) => {
 })
 
 const db = mongoose.connection;
+
+autoIncrement.intialize(db)
+
 module.exports = db;
+
 
